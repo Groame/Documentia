@@ -90,7 +90,7 @@ $$[d_1, d_2, \ldots, d_p, \; s_1, s_2, \ldots, s_q, \; r_1, r_2, \ldots, r_k]$$
 | Switches | $q$ | each $s_j \geq 0$, total $S \leq \min(R, N_S)$ |
 | Radios | $k$ | each $r_i \geq 1$, total $R \leq M$ |
 
-Where $N_S$ is the maximum total number of switches.
+Where $N_S$ is the maximum total number of switches. The total switches $S$ is bounded by both $N_S$ (the system limit) and $R$ (since each switch must connect to a radio — no dangling switches). Therefore the effective upper bound is $\min(R, N_S)$, which means "whichever is smaller: the total number of radios, or the maximum allowed switches".
 
 ## Derivation
 
