@@ -87,23 +87,29 @@ $$[d_1, d_2, \ldots, d_p, \; s_1, s_2, \ldots, s_q, \; r_1, r_2, \ldots, r_k]$$
 | Group | Types | Constraints |
 |-------|-------|-------------|
 | DUs | $p$ | each $d_i \geq 0$, total $D \geq 1$, $D \leq N_{DU}$ |
-| Switches | $q$ | each $s_j \geq 0$, total $S \leq R$ |
+| Switches | $q$ | each $s_j \geq 0$, total $S \leq \min(R, N_S)$ |
 | Radios | $k$ | each $r_i \geq 1$, total $R \leq M$ |
+
+Where $N_S$ is the maximum total number of switches.
 
 ## Derivation
 
 For a given total $R$:
 - $\binom{R-1}{k-1}$ ways to distribute radios (stars and bars, each $\geq 1$)
-- $\binom{R+q}{q}$ ways to distribute switches (sum over $S=0$ to $R$, using hockey stick identity)
+- $\binom{\min(R, N_S)+q}{q}$ ways to distribute switches (sum over $S=0$ to $\min(R, N_S)$, using hockey stick identity)
 
 For DUs (independent of $R$):
 - $\binom{N_{DU}+p}{p} - 1$ ways to distribute DUs (sum over $D=1$ to $N_{DU}$, excluding $D=0$)
 
 ## Generalized Formula
 
+$$\text{Total} = \left[\binom{N_{DU}+p}{p} - 1\right] \cdot \sum_{R=k}^{M} \binom{R-1}{k-1} \cdot \binom{\min(R, N_S)+q}{q}$$
+
+**Note:** When $N_S \geq M$ (switches are never the limiting factor), $\min(R, N_S) = R$ and the formula simplifies to:
+
 $$\text{Total} = \left[\binom{N_{DU}+p}{p} - 1\right] \cdot \sum_{R=k}^{M} \binom{R-1}{k-1} \cdot \binom{R+q}{q}$$
 
-**Note:** For $q=1$ (single switch type), the sum simplifies to the closed form $\frac{(kM+2k+1)\binom{M}{k}}{k+1}$. For $q > 1$, no single-term closed form exists — the sum must be computed directly or expanded into a degree-$q$ polynomial in $M$ multiplied by $\binom{M}{k}$.
+For $q=1$ and $N_S \geq M$, the sum further simplifies to the closed form $\frac{(kM+2k+1)\binom{M}{k}}{k+1}$.
 
 Where:
 - $p$ — number of DU types
@@ -117,13 +123,19 @@ Where:
 
 ### Examples
 
-**Example 1:** $p=1$ DU type, $q=1$ switch type, $k=2$ radio types, $N_{DU}=3$, $M=6$
+**Example 1:** $p=1$, $q=1$, $k=2$, $N_{DU}=3$, $N_S=6$, $M=6$
 
 Vector: $[d, s, r_1, r_2]$
 
 $$\text{Total} = \left[\binom{4}{1} - 1\right] \cdot \sum_{R=2}^{6} \binom{R-1}{1} \cdot \binom{R+1}{1} = 3 \cdot 85 = 255$$
 
-**Example 2:** $p=2$ DU types, $q=2$ switch types, $k=2$ radio types, $N_{DU}=3$, $M=6$
+**Example 2:** $p=1$, $q=1$, $k=2$, $N_{DU}=1$, $N_S=1$, $M=4$
+
+Vector: $[d, s, r_1, r_2]$ with $d=1$, $s \in \{0, 1\}$
+
+$$\text{Total} = \left[\binom{2}{1} - 1\right] \cdot \sum_{R=2}^{4} \binom{R-1}{1} \cdot \binom{\min(R,1)+1}{1} = 1 \cdot 12 = 12$$
+
+**Example 3:** $p=2$, $q=2$, $k=2$, $N_{DU}=3$, $N_S=6$, $M=6$
 
 Vector: $[d_1, d_2, s_1, s_2, r_1, r_2]$
 
