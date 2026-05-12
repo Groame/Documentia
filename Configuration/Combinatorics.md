@@ -23,13 +23,15 @@ For a given $R$:
 
 ## Generalized Formula ($k$ radio types)
 
-$$\text{Total} = N_{DU} \cdot \sum_{R=k}^{M} \binom{R-1}{k-1} \cdot (R + 1)$$
+$$\text{Total} = N_{DU} \cdot \sum_{R=k}^{M} \binom{R-1}{k-1} \cdot (R + 1) = N_{DU} \cdot \frac{(kM + 2k + 1)\binom{M}{k}}{k+1}$$
 
 Where:
+- $M$ — is the maximum number of radios that a node can handle
+- $R = r_1 + r_2 + \ldots + r_k \leq M$ — is the total number of radios in the configuration
 - $N_{DU}$ — the number of DU choices ($1 \leq d \leq N_{DU}$, e.g. $N_{DU} = 8$)
 - $\binom{R-1}{k-1}$ — the number of ways to distribute $R$ radios among $k$ types with each type having at least 1 (stars and bars)
 - $(R + 1)$ — the number of switch choices ($s = 0, 1, \ldots, R$)
-- The sum runs over all valid total radio counts $R$ from $k$ (minimum, since each type needs at least 1) to $M$ (maximum)
+- The sum runs over all valid total radio counts $R$ from $k$ (minimum, since each type needs at least 1 radio type) to $M$ (maximum)
 
 ### Examples for 1 to 5 (and k) radio types
 
@@ -53,10 +55,6 @@ For $k=5$ (5 radio types):
 
 $$\text{Total} = N_{DU} \cdot \sum_{R=5}^{M} \frac{(R-1)(R-2)(R-3)(R-4)}{24} \cdot (R+1) = N_{DU} \cdot \frac{(5M+11)\binom{M}{5}}{6}$$
 
-For arbitrary $k$:
-
-$$\text{Total} = N_{DU} \cdot \sum_{R=k}^{M} \binom{R-1}{k-1} \cdot (R+1) = N_{DU} \cdot \frac{(kM + 2k + 1)\binom{M}{k}}{k+1}$$
-
 ## Relation to "n choose k"
 
 The binomial coefficient $\binom{n}{k}$ counts the ways to choose $k$ items from $n$ distinct items. The full problem doesn't reduce to a single $\binom{n}{k}$ because the switch and DU dimensions are simply counting integers in a range.
@@ -75,7 +73,13 @@ The full formula multiplies this by the switch and DU choices and sums over all 
 
 ## Example
 
-For $M = 120$, $k = 2$: **Total = 585,400 configurations**
+For
+* $M = 120$ (maximum 120 radios)
+* $k = 2$ (2 radio types)
+* $N_{DU} = 2$ (1 or 2 DUs)
+* Switches from $0$ to $R$ (no separate switch limit, only bounded by the number of radios):
+
+**Total = 585,400 configurations**
 
 
 # Multiple DU types and switch types
@@ -84,9 +88,9 @@ The configuration vector becomes:
 
 $$[d_1, d_2, \ldots, d_p, \; s_1, s_2, \ldots, s_q, \; r_1, r_2, \ldots, r_k]$$
 
-| Group | Types | Constraints |
+| Group | # of types | Constraints |
 |-------|-------|-------------|
-| DUs | $p$ | each $d_i \geq 0$, total $D \geq 1$, $D \leq N_{DU}$ |
+| DUs | $p$ | each $d_i \geq 0$, total $1 \leq D \leq N_{DU}$ |
 | Switches | $q$ | each $s_j \geq 0$, total $S \leq \min(R, N_S)$ |
 | Radios | $k$ | each $r_i \geq 1$, total $R \leq M$ |
 
@@ -115,6 +119,7 @@ Where:
 - $p$ — number of DU types
 - $q$ — number of switch types
 - $k$ — number of radio types
+- $R = r_1 + r_2 + \ldots + r_k \leq M$ — is the total number of radios in the configuration
 - $N_{DU}$ — maximum total number of DUs
 - $M$ — maximum total number of radios
 - $\binom{N_{DU}+p}{p} - 1$ — total valid DU distributions (at least 1 DU)
