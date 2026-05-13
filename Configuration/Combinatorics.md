@@ -4,7 +4,7 @@
 
 Let us say that we want a matrix representing the amount of units we have of different types. If the first column represents a DU type, the second column represents a switch type (here denoted as "X" or "s"), and the third column represents a radio type. Then the matrix might look
 
-$$\begin{array}{ccc} d_1 & X & r_1 \\ \hline 1 & 1 & 1 \\ 2 & 2 & 2 \\ 3 & 3 & 3 \end{array}$$
+$$\begin{array}{ccc} d_1 & X & r_1 \\ 1 & 1 & 1 \\ 2 & 2 & 2 \\ 3 & 3 & 3 \end{array}$$
 
 But let us now put up a number of requirements:
 * We must **always** have at least 1 DU. Otherwise nothing can handle traffic.
@@ -21,7 +21,7 @@ To show how this will be represented.
 
 If we have 1 DU, 0-2 switches (bounded by how many radios), and 1-2 radios. We can have the following sets.
 
-$$\begin{array}{ccc} d_1 & X & r_1 \\ \hline 1 & 0 & 1 \\ 1 & 0 & 2 \\ 1 & 1 & 1 \\ 1 & 1 & 2 \\ 1 & 2 & 2\end{array}$$
+$$\begin{array}{ccc} d_1 & X & r_1 \\ 1 & 0 & 1 \\ 1 & 0 & 2 \\ 1 & 1 & 1 \\ 1 & 1 & 2 \\ 1 & 2 & 2\end{array}$$
 
 As we can see there is no $(1\: 2\: 1)$ set, since we cannot have more switches than radios.
 
@@ -63,11 +63,11 @@ where
 
 ### Example
 Let us say we can have 3 radio types, and a maximum of 5 radios. The formula says that should give us $1 \cdot \binom{5}{3} = 10$ sets. Here they are:
-$$\begin{array}{cccc} d_1 & r_1 & r_2 & r_3 \\ \hline 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 2 \\ 1 & 1 & 1 & 3 \\ 1 & 1 & 2 & 1 \\ 1 & 1 & 2 & 2 \\ 1 & 1 & 3 & 1 \\ 1 & 2 & 1 & 1 \\ 1 & 2 & 1 & 2 \\ 1 & 2 & 2 & 1 \\ 1 & 3 & 1 & 1\end{array}$$
+$$\begin{array}{cccc} d_1 & r_1 & r_2 & r_3 \\ 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 2 \\ 1 & 1 & 1 & 3 \\ 1 & 1 & 2 & 1 \\ 1 & 1 & 2 & 2 \\ 1 & 1 & 3 & 1 \\ 1 & 2 & 1 & 1 \\ 1 & 2 & 1 & 2 \\ 1 & 2 & 2 & 1 \\ 1 & 3 & 1 & 1\end{array}$$
 
 For every set there can *never be more than $M$* radios. But there can be fewer. For each type, there must be at least one radio. Having a set being $(1\: 1\: 0\: 0)$, meaning that we have no radio of type 2 or 3, would be unnecessary since that is better to calculate with a separate matrix where $M=5$ and $k=1$
 
-$$\begin{array}{cc}d_1 & r_1 \\ \hline 1 & 1 \\ 1 & 2 \\ 1 & 3\\ 1 & 4\\ 1 & 5\end{array}$$
+$$\begin{array}{cc}d_1 & r_1 \\ 1 & 1 \\ 1 & 2 \\ 1 & 3\\ 1 & 4\\ 1 & 5\end{array}$$
 
 
 
