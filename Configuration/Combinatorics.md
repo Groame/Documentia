@@ -79,7 +79,7 @@ For
 * $N_{DU} = 2$ (1 or 2 DUs)
 * Switches from $0$ to $R$ (no separate switch limit, only bounded by the number of radios):
 
-**Total = 585,400 configurations**
+**Total = 585,400 combinations**
 
 
 # Multiple DU types and switch types
