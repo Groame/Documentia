@@ -287,5 +287,19 @@ $$\text{Total} = \left[\binom{2}{1} - 1\right] \cdot \sum_{R=2}^{4} \binom{R-1}{
 
 Vector: $[d_1, d_2, s_1, s_2, r_1, r_2]$
 
+
+
+
+# DRAWINGS
+
+```mermaid
+graph LR
+    d_1[DU 1] --- x_1[Switch 1]
+    d_2[DU 2] --- x_2[Switch 2]
+    x_1 --- r_1[Radio 1]
+    x_2 --- r_1
+```
+
+
 $$\text{Total} = \left[\binom{5}{2} - 1\right] \cdot \sum_{R=2}^{6} \binom{R-1}{1} \cdot \binom{R+2}{2} = 9 \cdot 295 = 2655$$
 
