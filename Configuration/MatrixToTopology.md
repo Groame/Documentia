@@ -105,7 +105,10 @@ The off-diagonal blocks that were all zeros now have entries through the common 
 
 If instead you connect a node already in B to a node already in A, no new rows or columns are needed. You simply place a 1 in the off-diagonal blocks:
 
-$$\begin{pmatrix} A & C \\ C^T & B \end{pmatrix}$$
+$$\left(\begin{array}{c c}
+        A & C \\
+        C^T & B  
+\end{array}\right)$$
 
 Where $C$ contains 1s at positions corresponding to cross-connections between A's nodes and B's nodes. The matrix size stays $(n_A + n_B) \times (n_A + n_B)$ — you're just filling in entries that were previously zero.
 
