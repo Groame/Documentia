@@ -91,8 +91,8 @@ $$(n_A + n_B + 1) \times (n_A + n_B + 1)$$
 
 $$\begin{array}{c|c|c|c}
  & A_{nodes} & B_{nodes} & x_{common} \\ \hline
-A_{nodes} & A & 0 & \text{links to } x_{common} \\ \hline
-B_{nodes} & 0 & B & \text{links to } x_{common} \\ \hline
+A_{nodes} & A & 0 & \text{links to } x_{common} \\
+B_{nodes} & 0 & B & \text{links to } x_{common} \\
 x_{common} & \text{links from A} & \text{links from B} & 0
 \end{array}$$
 
@@ -169,7 +169,7 @@ Duplicate detection is an O(1) hash lookup per new configuration.
 
 
 $$\begin{array}{c|c c c c c}
-     & d1 & d2  & x1 & x2 & r1 \\ \hline
+     & d1 & d2  & x1 & x2 & r1 \\
 d1  & 0   & 0    & 1   & 0   & 0 \\
 d2  & 0   & 0    & 0   & 1   & 0 \\
 x1   & 1   & 0    & 0   & 0   & 1 \\
@@ -272,7 +272,7 @@ plt.show()
 ## Advanced drawing
 
 $$\begin{array}{c|c c c c c c c c c c c c c c c}
-     & d1 & d2  & x1 & x2 & x3 & x4 & r1 & r2 & r3 & r4 & r5 & r6 & r7 & r8 & r9 \\ \hline
+     & d1 & d2  & x1 & x2 & x3 & x4 & r1 & r2 & r3 & r4 & r5 & r6 & r7 & r8 & r9 \\
 d1  & 0   & 0    & 1   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0 \\
 d2  & 0   & 0    & 0   & 0   & 1   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0 \\
 x1   & 1   & 0    & 0   & 1   & 0   & 0   & 1   & 1   & 0   & 0   & 0   & 0   & 0   & 0   & 0 \\
@@ -390,7 +390,7 @@ Row, Column, Value — only non-zero entries from upper triangle:
 
 
 $$\begin{array}{c|c c c c c c c c c c c c c c c}
-    & d1 & d2 & x1 & x2 & x3 & x4 & x5 & x6 & x7 & x8 & x9 & r1 & r2 & r3 & r4 & r5 & r6 & r7 & r8 & r9 & r10 & r11 & r12 & r13 & r14 & r15 & r16 & r17 & r18 & r19 & r20 & r21 & r22 & r23 & r24 & r25 & r26 & r27 & r28 \\ \hline
+    & d1 & d2 & x1 & x2 & x3 & x4 & x5 & x6 & x7 & x8 & x9 & r1 & r2 & r3 & r4 & r5 & r6 & r7 & r8 & r9 & r10 & r11 & r12 & r13 & r14 & r15 & r16 & r17 & r18 & r19 & r20 & r21 & r22 & r23 & r24 & r25 & r26 & r27 & r28 \\
 d1  & 0  & 0  & 1  & 0  & 1  & 1  & 1  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0   & 1   & 0   & 0   & 1   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   \\
 d2  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 1  & 1  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0   & 0   & 0   & 1   & 1   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 1   & 0   & 0   & 0   \\
 x1  & 1  & 0  & 0  & 1  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 0  & 1  & 0  & 0  & 0  & 0  & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   & 0   \\
