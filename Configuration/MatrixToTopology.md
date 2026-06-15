@@ -3,7 +3,7 @@
 Let us have an adjacency matrix of the following form
 
 $$\begin{array}{c|c c c c c c c c c}
-        & d1 & \ldots & dn  & x1 & \ldots & xn & r1 & \ldots & rn \\\hline
+        & d1 & \ldots & dn  & x1 & \ldots & xn & r1 & \ldots & rn \hline
 d1      & 0  & \ldots & 0   & 0  & \ldots & 0  & 0  & \ldots & 0 \\
 \vdots  & 0  & \ldots & 0   & 0  & \ldots & 0  & 0  & \ldots & 0 \\
 dn      & 0  & \ldots & 0   & 0  & \ldots & 0  & 0  & \ldots & 0 \\
