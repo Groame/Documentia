@@ -75,7 +75,10 @@ Given two separate adjacency matrices:
 
 Before connecting them, they form a **block-diagonal** matrix — a 2×2 matrix of blocks:
 
-$$\begin{pmatrix} A & 0 \\ 0 & B \end{pmatrix}$$
+$$\begin{array}{c c}
+        A & 0 \\
+        0 & B  
+\end{array}$$
 
 - $A$ in position (1,1): the first network's internal connections
 - $B$ in position (2,2): the second network's internal connections
