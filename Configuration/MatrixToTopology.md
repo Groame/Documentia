@@ -90,7 +90,7 @@ To connect both DUs to a shared switch $x_{common}$, add 1 row and 1 column:
 $$(n_A + n_B + 1) \times (n_A + n_B + 1)$$
 
 $$\begin{array}{c|c|c|c}
- & A_{nodes} & B_{nodes} & x_{common} \\ \hline
+ & A_{nodes} & B_{nodes} & x_{common} \\
 A_{nodes} & A & 0 & \text{links to } x_{common} \\
 B_{nodes} & 0 & B & \text{links to } x_{common} \\
 x_{common} & \text{links from A} & \text{links from B} & 0
