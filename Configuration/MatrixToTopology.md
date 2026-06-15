@@ -3,7 +3,7 @@
 Let us have an adjacency matrix of the following form
 
 $$\begin{array}{c|c c c c c c c c c}
-        & d1 & \ldots & dn  & x1 & \ldots & xn & r1 & \ldots & rn \\ \hline
+        & d1 & \ldots & dn  & x1 & \ldots & xn & r1 & \ldots & rn \\\hline
 d1      & 0  & \ldots & 0   & 0  & \ldots & 0  & 0  & \ldots & 0 \\
 \vdots  & 0  & \ldots & 0   & 0  & \ldots & 0  & 0  & \ldots & 0 \\
 dn      & 0  & \ldots & 0   & 0  & \ldots & 0  & 0  & \ldots & 0 \\
@@ -22,7 +22,7 @@ where currently everything is zero. But if a unit is connected to another unit (
 1 DU, 1 RU. The radio is not connected to itself, and the DU is not connected to itself.
 
 $$\begin{array}{c|c c}
-     & d1 & r1 \\ \hline
+     & d1 & r1 \\\hline
 d1  & 0   & 1  \\
 r1  & 1   & 0
 \end{array}$$
