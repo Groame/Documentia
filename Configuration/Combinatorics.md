@@ -41,7 +41,7 @@ As we can see there is no $(1\: 2\: 1)$ set, since we cannot have more switches 
 ### Derivation of number of sets
 The maximum number of radios we can have in a configuration is $M$. The amount of radio types we have within the configuration is denoted with $k$.
 
-Let $R = r_1 + r_2 + \ldots + r_k$, represent the total number of radios, where $r_i$ (1\leq i\leq k) represents how many we have of a specific type of radio. Where $R$ ranges from $k$ to $M$ since we must have at least 1 of each radio type (and there are $k$ amount of types).
+Let $R = r_1 + r_2 + \ldots + r_k$, represent the total number of radios, where $r_i$ ($1\leq i\leq k$) represents how many we have of a specific type of radio. Where $R$ ranges from $k$ to $M$ since we must have at least 1 of each radio type (and there are $k$ amount of types).
 
 For a given number of radios $R$, but only 1 DU type and 1 switch type allowed:
 - $\binom{R-1}{k-1}$ ways to distribute $R$ radios among $k$ types (each $\geq 1$) — stars and bars
