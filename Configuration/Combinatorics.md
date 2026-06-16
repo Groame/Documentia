@@ -4,7 +4,12 @@
 
 Let us say that we want a matrix representing the amount of units we have of different types. If the first column represents a DU type, the second column represents a switch type (here denoted as "X" or "s"), and the third column represents a radio type. Then the matrix might look
 
-$$\begin{array}{ccc} d_1 & X & r_1 \\ 1 & 1 & 1 \\ 2 & 2 & 2 \\ 3 & 3 & 3 \end{array}$$
+$$\begin{array}{c c c} 
+   d_1 & X & r_1 \\ 
+   1 & 1 & 1 \\ 
+   2 & 2 & 2 \\ 
+   3 & 3 & 3 
+\end{array}$$
 
 But let us now put up a number of requirements:
 * We must **always** have at least 1 DU. Otherwise nothing can handle traffic.
