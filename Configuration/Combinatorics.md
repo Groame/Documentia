@@ -74,20 +74,22 @@ where
 - $k$ is how many radio types we have.
 
 ### Example
-Let us say we can have 3 radio types, and a maximum of 5 radios. The formula says that should give us $1 \cdot \binom{5}{3} = 10$ sets. Here they are:
+Let us say we can have 3 radio types, and a maximum of 5 radios. The formula says that should give us $1 \cdot \binom{5}{3} = 10$ sets. 
 
-$$\begin{array}{c c c c} 
+Here they are:
+
+$$\begin{array}{cccc} 
 d_1 & r_1 & r_2 & r_3 \\ 
-   1 & 1 & 1 & 1 \\ 
-   1 & 1 & 1 & 2 \\ 
-   1 & 1 & 1 & 3 \\ 
-   1 & 1 & 2 & 1 \\ 
-   1 & 1 & 2 & 2 \\ 
-   1 & 1 & 3 & 1 \\ 
-   1 & 2 & 1 & 1 \\ 
-   1 & 2 & 1 & 2 \\ 
-   1 & 2 & 2 & 1 \\ 
-   1 & 3 & 1 & 1
+1 & 1 & 1 & 1 \\ 
+1 & 1 & 1 & 2 \\ 
+1 & 1 & 1 & 3 \\ 
+1 & 1 & 2 & 1 \\ 
+1 & 1 & 2 & 2 \\ 
+1 & 1 & 3 & 1 \\ 
+1 & 2 & 1 & 1 \\ 
+1 & 2 & 1 & 2 \\ 
+1 & 2 & 2 & 1 \\ 
+1 & 3 & 1 & 1
 \end{array}$$
 
 For every set there can *never be more than $M$* radios. But there can be fewer. For each type, there must be at least one radio. Having a set being $(1\: 1\: 0\: 0)$, meaning that we have no radio of type 2 or 3, would be unnecessary since that is better to calculate with a separate matrix where $M=5$ and $k=1$
@@ -100,9 +102,6 @@ d_1 & r_1 \\
    1 & 4\\ 
    1 & 5
 \end{array}$$
-
-
-
 
 
 ## No switches but multiple DU types
