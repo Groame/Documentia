@@ -75,7 +75,8 @@ where
 
 ### Example
 Let us say we can have 3 radio types, and a maximum of 5 radios. The formula says that should give us $1 \cdot \binom{5}{3} = 10$ sets. Here they are:
-$$\begin{array}{cccc} 
+
+$$\begin{array}{c c c c} 
 d_1 & r_1 & r_2 & r_3 \\ 
    1 & 1 & 1 & 1 \\ 
    1 & 1 & 1 & 2 \\ 
